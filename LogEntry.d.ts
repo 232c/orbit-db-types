@@ -1,23 +1,28 @@
-interface IdentityJson {
+
+interface OrbitDBIdentityJson {
     id: string,
     publicKey: string,
     signatures: { id: string, publicKey: string },
     type: string
 }
 
-interface LamportClockJson {
+interface OrbitDBLamportClockJson {
     id: 'string',
     time: number
 }
 
-interface LogEntry<T> {
+interface OrbitDBEntryLog<PAYLOAD> {
     hash: string,
     id: string,
-    payload: { op?: string, key?: string, value: T },
+    payload: PAYLOAD,
     next: string[], // Hashes of parents
     v: number, // Format, can be 0 or 1
-    clock: LamportClockJson,
+    clock: OrbitDBLamportClockJson,
     key: string,
-    identity: IdentityJson,
+    identity: OrbitDBIdentityJson,
     sig: string
+}
+
+interface OrbitDBTypedEntryLog<T> extends OrbitDBEntryLog<{ op?: string, key?: string, value: T }> {
+
 }

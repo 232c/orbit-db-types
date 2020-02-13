@@ -13,7 +13,7 @@ declare module "orbit-db-access-controllers/src/orbitdb-access-controller" {
         get address (): string
 
         // Return true if entry is allowed to be added to the database
-        canAppend (entry: LogEntry<any>, identityProvider: any): Promise<boolean>
+        canAppend (entry: OrbitDBTypedEntryLog<any>, identityProvider: any): Promise<boolean>
 
         get capabilities (): {[key: string]: Set<any>}
         get (capability: string): Set<any>

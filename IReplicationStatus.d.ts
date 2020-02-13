@@ -1,4 +1,4 @@
-interface IReplicationStatus {
+interface OrbitDBIReplicationStatus {
     buffered: number;
     queued: number;
     progress: number;

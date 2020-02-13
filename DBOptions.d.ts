@@ -1,5 +1,5 @@
 
-interface ICreateOptions {
+interface OrbitDBICreateOptions {
     /**
      * The directory where data will be stored (Default: uses directory option passed to OrbitDB constructor or ./orbitdb if none was provided).
      */
@@ -31,7 +31,7 @@ interface ICreateOptions {
     replicate?: boolean;
 }
 
-interface IOpenOptions {
+interface OrbitDBIOpenOptions {
     /**
      * f set to true, will throw an error if the database can't be found locally. (Default: false)
      */
@@ -53,7 +53,7 @@ interface IOpenOptions {
      * Otherwise it's used to validate the manifest.
      * You ony need to set this if using OrbitDB#open
      */
-    type?: TStoreType;
+    type?: OrbitDBTStoreType;
 
     /**
      * Overwrite an existing database (Default: false)
@@ -66,11 +66,11 @@ interface IOpenOptions {
     replicate?: boolean;
 }
 
-interface IStoreOptions extends ICreateOptions, IOpenOptions {
+interface OrbitDBIStoreOptions extends OrbitDBICreateOptions, OrbitDBIOpenOptions {
     Index?: any
 }
 
 // c.f. https://github.com/orbitdb/orbit-db/blob/master/API.md#orbitdbdatabasetypes
-type TStoreType = 'counter' | 'eventlog' | 'feed' | 'docstore' | 'keyvalue' | string;
+type OrbitDBTStoreType = 'counter' | 'eventlog' | 'feed' | 'docstore' | 'keyvalue' | string;
 
-//export {ICreateOptions, IOpenOptions, IStoreOptions};
+//export {OrbitDBICreateOptions, IOpenOptions, IStoreOptions};

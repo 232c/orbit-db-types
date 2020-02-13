@@ -37,7 +37,7 @@ declare module "orbit-db-access-controllers/src/access-controller-interface" {
             be allowed in the database. Return true if the entry is allowed,
             false is not allowed
         */
-        canAppend (entry: LogEntry<any>, identityProvider): Promise<boolean>
+        canAppend (entry: OrbitDBTypedEntryLog<any>, identityProvider): Promise<boolean>
 
         /* Add and remove access */
         grant (access: string, identity: any): Promise<any>

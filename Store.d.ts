@@ -6,7 +6,7 @@ declare module "orbit-db-store" {
     import * as elliptic from "elliptic";
 
     export interface AddOperationOptions {
-        onProgressCallback?: (entry) => any;
+        onProgressCallback?: (entry: OrbitDBTypedEntryLog<any>) => any;
         syncLocal?: boolean;
         pin?: boolean;
     }
@@ -30,7 +30,7 @@ declare module "orbit-db-store" {
          * The key can also be accessed from the OrbitDB instance: `orbitdb.key.getPublic('hex')`.
          */
         key: elliptic.ec.KeyPair;
-        replicationStatus: IReplicationStatus;
+        replicationStatus: OrbitDBIReplicationStatus;
 
         events: EventEmitter;
 
@@ -41,7 +41,7 @@ declare module "orbit-db-store" {
          * @param address 
          * @param options 
          */
-        protected constructor(ipfs: IPFS, identity, address: string, options: IStoreOptions);
+        protected constructor(ipfs: IPFS, identity, address: string, options: OrbitDBIStoreOptions);
 
         close(): Promise<void>;
         drop(): Promise<void>;

@@ -47,23 +47,23 @@ declare module 'orbit-db' {
             identity?: Identity
         }): Promise<OrbitDB>
 
-        create(name: string, type: TStoreType, options?: ICreateOptions): Promise<Store>;
+        create(name: string, type: OrbitDBTStoreType, options?: OrbitDBICreateOptions): Promise<Store>;
 
-        open(address: string, options?: IOpenOptions): Promise<Store>;
+        open(address: string, options?: OrbitDBIOpenOptions): Promise<Store>;
 
         disconnect(): Promise<void>;
         stop(): Promise<void>;
 
-        feed<T>(address: string, options?: IStoreOptions): Promise<FeedStore<T>>;
-        log<T>(address: string, options?: IStoreOptions): Promise<EventStore<T>>;
-        eventlog<T>(address: string, options?: IStoreOptions): Promise<EventStore<T>>;
-        keyvalue<T>(address: string, options?: IStoreOptions): Promise<KeyValueStore<T>>;
-        kvstore<T>(address: string, options?: IStoreOptions): Promise<KeyValueStore<T>>;
-        counter(address: string, options?: IStoreOptions): Promise<CounterStore>;
-        docs<T>(address: string, options?: IStoreOptions): Promise<DocumentStore<T>>;
-        docstore<T>(address: string, options?: IStoreOptions): Promise<DocumentStore<T>>;
+        feed<T>(address: string, options?: OrbitDBIStoreOptions): Promise<FeedStore<T>>;
+        log<T>(address: string, options?: OrbitDBIStoreOptions): Promise<EventStore<T>>;
+        eventlog<T>(address: string, options?: OrbitDBIStoreOptions): Promise<EventStore<T>>;
+        keyvalue<T>(address: string, options?: OrbitDBIStoreOptions): Promise<KeyValueStore<T>>;
+        kvstore<T>(address: string, options?: OrbitDBIStoreOptions): Promise<KeyValueStore<T>>;
+        counter(address: string, options?: OrbitDBIStoreOptions): Promise<CounterStore>;
+        docs<T>(address: string, options?: OrbitDBIStoreOptions): Promise<DocumentStore<T>>;
+        docstore<T>(address: string, options?: OrbitDBIStoreOptions): Promise<DocumentStore<T>>;
 
-        static isValidType(type: TStoreType);
+        static isValidType(type: OrbitDBTStoreType);
         static addDatabaseType(type: string, store: typeof Store);
         static getDatabaseTypes(): {};
         static isValidAddress(address: string): boolean;
