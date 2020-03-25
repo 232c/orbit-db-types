@@ -1,6 +1,6 @@
 
 declare module "orbit-db-store" {
-    import IPFS = require("ipfs");
+    import IPFS from "ipfs";
     import { Identity } from "orbit-db-identity-provider";
     import { EventEmitter } from 'events';
     import * as elliptic from "elliptic";
