@@ -22,6 +22,6 @@
   "dependencies": {
     "@types/elliptic": "^6.4.6",
     "@types/events": "^1.2.0",
-    "@types/ipfs": "git+https://github.com/lukas2005/types-ipfs.git"
+    "@types/ipfs": "git+https://github.com/Xmader/ipfs-types.git"
   }
 }
