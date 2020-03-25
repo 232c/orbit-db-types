@@ -1,7 +1,7 @@
 
 declare module "orbit-db-access-controllers/src/access-controller-interface" {
 
-    import EventEmitter from 'events'
+    import { EventEmitter } from 'events'
     import OrbitDB from 'orbit-db'
     import { Identity } from 'orbit-db-identity-provider'
 
