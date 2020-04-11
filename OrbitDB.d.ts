@@ -71,3 +71,8 @@ declare module 'orbit-db' {
 
     export default OrbitDB;
 }
+
+declare module '@paper-db/orbit-db' {
+    import OrbitDB from 'orbit-db'
+    export default OrbitDB
+}
